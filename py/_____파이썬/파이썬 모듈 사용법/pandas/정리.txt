@@ -1,0 +1,26 @@
+ data = {'name':['kim','lee','choi','park','yoon','jung','kang'],
+	'age':[25, 23,18, 29, 35, 42, 30],
+	'weight':[45, 52, 63, 51, 73, 69, 50]}
+	데이터프레임 만드는 방법
+
+df = pd.DataFrame(data)
+
+test = pd.read_csv('./~~')
+	test는 데이터 프레임
+
+test = test.loc[:, ['col']]
+	행은 전체 남기고, 열은 'col'이란 열만 남김
+
+test = test.drop(["A"], axis=1)
+test = test.drop(columns="A")
+	'A'인 열 삭제
+
+test = test.drop("c1")
+test = test.drop("c1", axis=0)
+test = test.drop(index="c1")
+	'c1'인 행 삭제
+
+test = test.pivot("연도", '도시', '인구')
+	새로운 데이터프레임을 만든다.
+	연도가 행이름들, 도시가 열이름들, 인구가 데이터가 된다.
+

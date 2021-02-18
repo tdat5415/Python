@@ -1,0 +1,52 @@
+1. ICMPv4 주요 메세지 구분  ☞ IANA ICMPv4 Parameters
+
+  ㅇ ICMP 오류 메세지 (Error Reporting Message)
+     - 목적지도달불가(Destination Unreachable) : Type 3
+        . Network Unreachable  : Code 0
+        . Host Unreachable     : Code 1
+        . Protocol Unreachable : Code 2
+        . Port Unreachable     : Code 3 
+     - 발신 억제(Source Quench)                : Type 4 (표준에서 제외됨)
+     - 재지정(Redirect)                        : Type 5
+     - 시간 초과(Time Exceeded)                : Type 11
+        . 패킷이 루프를 돌거나, 과밀 발생, 타이머 값이 너무 낮게 설정된 경우
+     - 매개변수 문제(Parameter Problem)        : Type 12
+
+  ㅇ ICMP 정보성 메세지(Informational Message) / 질의 메세지(Query Message)
+     - 호스트 간에 연결성 검사 확인 (Ping 명령어 확인 등)
+        . 에코 응답(Echo Reply)                : Type 0
+           .. Ping Echo 응답, 데이터를 다시 리턴해 줌
+        . 에코 요청(Echo Request)              : Type 8
+           .. Ping Echo 요청, 옵션 데이터 가능
+     - 라우터 광고(Router Advertisement)       : Type 9
+     - 라우터 간청(Router Solicitation)        : Type 10
+
+
+2. ICMPv6 주요 메세지 구분  ☞ IANA ICMPv6 Parameters
+
+  ㅇ ICMP 오류메세지 (Error Reporting Message) 
+     - 목적지도달불가(Destination Unreachable) : Type 1
+     - 너무 큰 패킷(Packet Too Big)            : Type 2
+     - 시간 초과(Time Exceeded)                : Type 3
+     - 매개변수 문제(Parameter Problem)        : Type 4  등
+
+  ㅇ 호스트 간에 연결성 검사 확인 (Ping 명령어 확인 등)
+     - 에코 요청(Echo Request)                 : Type 128
+     - 에코 응답(Echo Reply)                   : Type 129
+
+  ㅇ 멀티캐스트 그룹 멤버십 관리 
+     - 멀티캐스트 리스너 발견 MLD(Multicast Listener Discovery) : (Type 130 ~ 132)
+        . MLQ(Multicast Listener Query,조회)  : Type 130
+        . MLR(Multicast Listener Report,보고) : Type 131
+        . MLD(Multicast Listener Done,종료)   : Type 132
+     - 멀티캐스트 라우터 발견 : Type 151,152,153
+
+  ㅇ 이웃 발견 메세지 (Neighbor Discovery Message)
+     - NDP(Neighbor Discovery Protocol) 관련 메세지들 : (Type 133 ~ 137)
+        . 라우터 간청(RS, Router Solicitation)  : Type 133
+        . 라우터 알림(RA, Router Advertisement) : Type 134
+        . 이웃 간청(NS, Neighbor Solicitation)  : Type 135
+        . 이웃 알림(NA, Neighbor Advertisement) : Type 136
+        . 재지정 메세지(Redirect Error Message) : Type 137
+     - 역이웃 간청(Inverse Neighbor Discovery Solicitation)  : Type 141
+     - 역이웃 광고(Inverse Neighbor Discovery Advertisement) : Type 142

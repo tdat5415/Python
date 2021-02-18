@@ -1,0 +1,57 @@
+import 모듈1, 모듈2
+모듈1.변수(ex : math.pi)
+모듈1.함수(ex : math.sqrt(N))
+
+
+import 패키지.모듈1, 패키지.모듈2
+패키지.모듈1.함수
+(ex : urllib.request.urlope.('http://www.google.co.kr'))
+
+
+from 모듈 import 함수 as 새이름
+(ex : from math import sqrt as sq)
+
+
+from 패키지.모듈 import *
+모듈의 모든 함수, 변수, 클래스를 가져온다.
+
+
+from 패키지.모듈 import 변수
+from 패키지.모듈 import 함수
+from 패키지.모듈 import 클래스
+from 패키지.모듈 import 변수, 함수, 클래스
+from 패키지.모듈 import *
+
+
+del 모듈
+import로 가져온 모듈(변수,함수,클래스)은 del로 해제가능
+
+
+import importlib
+import math
+importlib.reload(math)
+모듈을 다시 가져온다.
+
+
+import random
+random 모듈을 가져옴
+
+
+from pprint import pprint     # width는 가로 폭
+pprint(a, indent=4, width=20) # indent는 들여쓰기 칸수
+[    [10, 20],
+     [30, 40],
+     [50, 60]]
+
+
+import copy
+copy모듈을 가져옴
+
+
+import string
+', python.'.strip(string.punctuation)
+' python'
+string.punctuation
+'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+
+

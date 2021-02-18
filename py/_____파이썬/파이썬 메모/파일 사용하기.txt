@@ -1,0 +1,41 @@
+file =open('hello.txt', w) #r은 읽기
+file.write('Hello, PYTHON!')
+file.close()
+
+
+with open('hello.txt', 'r') as file:
+    s = file.read()
+    print(s)
+자동으로 파일 객체를 닫는다
+
+
+file.writelines(문자열리스트) #쓰기모드로
+리스트요소(문자열)에 '\n'넣을것
+안그러면 한줄에 붙어버림
+
+
+lines =file.readlines() #읽기모드로
+한줄씩 모든줄을 읽어온다
+리스트가 된다
+
+
+line =file.readline() #읽기모드로
+한줄을 읽어온다
+
+
+a, b, c =file
+파일객체는 이터레이터
+따라서 언패킹이 가능하고 
+for문에서도 쓸수 있다.
+
+
+파이썬 객체 파일 저장하기
+객체를 파일에 저장하는것을 피클링
+파일에서 객체를 불러오는것을 언피클링
+모듈 : import pickle
+파일모드 : wb
+저장하기 : pickle.dump(객체, 파일객체)
+파일모드 : rb
+가져오기 : 변수명 = pickle.load(파일객체)
+
+

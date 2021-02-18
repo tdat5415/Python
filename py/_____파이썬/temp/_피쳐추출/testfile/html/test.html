@@ -1,0 +1,92 @@
+<!--
+
+THIS IS ORIGINAL CODE
+16040029 이강로
+
+I made a mistake...
+I should not have uploaded it on github.
+
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link rel="stylesheet" href="style.css">
+            <script src="app.js"></script>
+
+            <title>이강로</title>
+    </head>
+    <body>
+        <div id="main">
+            <h4>THIS IS ORIGINAL</h4>
+            <div class="svg-wrapper">
+                <svg height="50" width="50">
+                    <rect class="shape" height="50" width="50" />
+                    <text x="10" y="40" font-size="30px">이</text>
+                </svg>
+                
+                <svg height="50" width="50">
+                    <rect class="shape" height="50" width="50" />
+                    <text x="10" y="40" font-size="30px">강</text>
+                </svg>
+
+                <svg height="50" width="50">
+                    <rect class="shape" height="50" width="50" />
+                    <text x="10" y="40" font-size="30px">로</text>
+                </svg>
+            </div>
+
+            <h5 id="smallFont">International Comapany</h5>
+            <h1 id="bigFont">Product Information</h1>
+
+            <div id="entry">
+                <div>
+                    <p>Name</p>
+                    <input type="text" id="inpName"/>
+                </div>
+                <div>
+                    <p>Price</p>
+                    <input type="text" id="inpPrice"/>
+                </div>
+                <div><button id="save">Save</button></div>   
+            </div>
+
+            <table width="100%" border="1">
+                <tr><!--row-->
+                    <th id="ID">
+                        <button id="id_button" class="buttons">▼ ID</button>
+                    </th><!--table header-->
+                    <th id="NAME">
+                        <button id="name_button" class="buttons">▼ NAME</button>
+                    </th>
+                    <th id="PRICE">
+                        <button id="price_button" class="buttons">▼ PRICE</button>
+                    </th>
+                </tr>
+                <tbody id="tableData" onkeydown="whatKey(event)">
+                    <!--
+                    <tr>
+                        <td>Kim</td>
+                        <td>Mina</td>
+                        <td>1010101</td>
+                    </tr>
+                    <tr>
+                        <td>Kim</td>
+                        <td>Mina</td>
+                        <td>1010101</td>
+                    </tr>
+                -->
+                </tbody>
+
+
+            </table>
+
+            <div id="Bottom">
+                ⓒ2018. 이강로™
+            </div>
+
+        </div>
+    </body>
+</html>

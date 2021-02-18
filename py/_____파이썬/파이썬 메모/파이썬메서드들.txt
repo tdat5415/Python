@@ -1,0 +1,227 @@
+sys.getrefcount(1000) ### 반환
+1000이라는 객체를 사용(참조)한 횟수를 리턴
+(reference count)
+
+
+hello.encode('utf-8') ### 반환
+UTF-8로 인코딩 했을 때 바이트 수를 구함
+
+
+a,b = input().split() ### 반환
+입력받은 값을 공백을 기준으로 분리(문자열)#리스트로
+
+
+math.ceil(1.5) ### 반환
+올림함수
+math.floor(1.5) ### 반환
+버림함수
+
+
+i = random.randint(0,9) ### 반환
+randint를 사용하여 0부터 9까지 무작위로 정수를 생성
+
+
+a = []
+a.append(값 또는 리스트)
+리스트의 맨 뒤에 값을 추가합니다.
+a[len(a):] = [값하나]
+a.insert(len(a),값)
+
+
+a.extend(리스트)
+리스트의 맨 뒤에 다른 리스트를 연결합니다.
+참고로 튜플을 넣어도 리스트로 인식합니다.
+
+
+a.insert(인덱스,값)
+리스트의 특정 인덱스에 값을 추가합니다.
+참고로 인덱스에 len(a)이상 값 넣으면 맨 뒤에 값 추가
+
+
+a.remove(값)
+리스트에서 특정값을 찾아서 삭제합니다.
+여러개일 경우 처음 찾은 값을 삭제합니다.
+
+
+a.pop() ### 반환
+리스트의 마지막 값을 삭제한 뒤 삭제한 값을 반환합니다.
+참고로 괄호에 인덱스를 넣으면 해당 값 먼저 이행됩니다.
+값을 버릴려면 _(언더바) 변수에 버릴 것
+
+
+a.index(값) ### 반환
+리스트(튜플)에서 특정 값의 인덱스를 구합니다.
+여러 개일 경우 처음 찾은 인덱스(가장 작은 인덱스)
+
+
+a.count(값) ### 반환
+리스트,튜플,문자열에서 특정 값의 개수를 구합니다.
+
+
+a.reverse()
+리스트에서 값의 순서를 반대로 뒤집습니다.
+
+
+a.sort()
+리스트의 값을 작은 순서대로 정렬(오름차순)합니다.
+괄호에 reverse=True를 추가하면 내림차순
+
+
+a.clear()
+리스트의 모든 값을 삭제합니다.
+빈리스트
+
+
+b = a.copy()
+b에 a의 요소가 모두 b에 복사됩니다.
+참고로 b = a하면 객체자체가 같아서 문제가 됨.
+
+
+b = copy.deepcopy(a) ### 반환
+다차원리스트a를 복사해서 b에 할당
+copy모듈필요
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\24.1 문자열 조작하기
+s = s.replace('world','python') ### 반환
+문자열바꾸기
+
+
+table = str.maketrans('aei', '123') # dict ### 반환
+'apple'.translate(table) ### 반환
+'1ppl2'
+암호해독에쓰일듯
+
+
+'apple pear grape'.split() ### 반환
+['apple', 'pear', 'grape']
+공백(괄호안)기준으로 나누며 리스트로 변환
+' '.join(['apple', 'pear', 'grape']) ### 반환
+'apple pear grape'
+반대로 공백기준으로 붙이며 문자열로 변환
+
+
+'python'.upper() ### 반환
+'PYTHON'
+소문자를 대문자로
+'PYTHON'.lower() ### 반환
+'python'
+대문자를 소문자로
+
+
+'  python   '.lstrip() #lstrip(특정문자) ### 반환
+왼쪽 공백(특정문자) 삭제하기
+'   python   '.rstrip() ### 반환
+오른쪽 공백(특정문자) 삭제하기
+'   python   '.strip() ### 반환
+양쪽 공백(특정문자) 삭제하기
+
+
+import string
+', python.'.strip(string.punctuation)
+' python'
+string.punctuation
+'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+구두점을 간단하게 삭제할 수 있다.
+공백까지 삭제하고 싶으면
+', python.'.strip(string.punctuation + ' ')
+', python.'.strip(string.punctuation).strip()
+
+
+'python'.ljust(10) ### 반환
+문자열을 10칸으로 만들고 왼쪽정렬(나머지 공백)
+'python'.rjust(10) ### 반환
+문자열을 10칸으로 만들고 오른쪽정렬(나머지 공백)
+'python'.center(10) ### 반환
+문자열을 10칸으로 만들고 가운데정렬(나머지 공백)
+
+
+'3.5'.zfill(6) ### 반환
+'0003.5'
+문자열 왼쪽에 0채우기
+(zero fill)
+
+
+'apple pineapple'.find('pl')  ### 반환
+2
+특정문자열을 처음찾은 인덱스를 반환
+없으면 -1 반환
+s.index('pl')를 해도 똑같이 반환하지만 -1을 반환못함
+대신 index는 list,str둘다되고 find는 str만 됨
+
+
+rfind()
+오른쪽부터찾음
+rindex()
+오른쪽부터찾음
+
+
+s.count(?)
+s는 문자열, 튜플, 리스트 된다.
+
+
+\\\\\\\\\\\\\\\\24.2 문자열서식지정자와 포매팅사용하기
+
+>>> 'I am %s.' % 'james'
+'I am james.'
+
+>>> '%10.3f' % 2.3
+'     2.300'
+문자길이 10오른쪽정렬 소숫점3자리
+
+>>> '%.3s' % 'python'
+'pyt'
+왼쪽부터 세개
+
+>>> '%-10.3s' % 'python'
+'pyt       '
+왼쪽부터 세개 문자길이10 왼쪽정렬
+
+>>> 'Today is %d %s.' % (3, 'April')
+'Today is 3 April.'
+
+
+>>> 'Hello, {0} {2} {1}'.format('Python','Script',3.6)
+'Hello, Python 3.6 Script'
+
+>>> 'Hello, {language} {version}'.format(language='Python', version=3.6)
+'Hello, Python 3.6'
+
+
+>>> '{0:x>10,}'.format(1500)
+'xxxxx1,500'
+인덱스 0을 문자길이10, 오른쪽정렬, 빈공간 'x'로 채움
+천단위 콤마까지(금액)
+
+
+for key, value in x.items():
+print(key, value)
+딕셔너리에서 키-값 쌍을 출력
+
+for key in x.keys():
+print(key, end=' ')
+딕셔너리에서 키를 출력
+
+for value in x.values():
+print(value, end=' ')
+딕셔너리에서 값을 출력
+
+
+keys =['a', 'b', 'c', 'd']
+x =dict.fromkeys(keys)
+print(x)
+>>> {'a': None, 'b': None, 'c': None, 'd': None}
+
+
+a ={1, 2, 3, 4}
+a.isdisjoint({5, 6, 7, 8}) # True
+겹치는 요소가 없음
+
+
+x.update({5})
+set에 5추가
+
+x.update({'c':5})
+dict에 'c':5추가
+
+

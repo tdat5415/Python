@@ -1,0 +1,7 @@
+sniffer_with_scapy.py를 실행시키기위해
+
+scapy 버그없는 버전을 찾아서 site-package에 놓고
+(pip install scapy 안햇음)
+
+winpcap 설치 안되있대서 설치 함
+
